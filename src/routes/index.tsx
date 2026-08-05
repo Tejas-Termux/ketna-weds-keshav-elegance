@@ -1,22 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Flower2, UtensilsCrossed, Gem, Phone, MapPin, Heart } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
+import { Countdown } from "@/components/wedding/Countdown";
+import { CoupleIllustration } from "@/components/wedding/CoupleIllustration";
 import { EntryScreen } from "@/components/wedding/EntryScreen";
 import { MusicToggle } from "@/components/wedding/MusicToggle";
 import { Divider, CornerFlourish, Petals } from "@/components/wedding/Ornaments";
 import { Reveal } from "@/components/wedding/Reveal";
 import ganesha from "@/assets/ganesha.png";
-import couple from "@/assets/couple.jpg";
-import galleryMandap from "@/assets/gallery-mandap.jpg";
-import galleryRings from "@/assets/gallery-rings.jpg";
-import galleryRitual from "@/assets/gallery-ritual.jpg";
-import galleryMehendi from "@/assets/gallery-mehendi.jpg";
-import galleryDiyas from "@/assets/gallery-diyas.jpg";
-import galleryBells from "@/assets/gallery-bells.jpg";
-import galleryMarigold from "@/assets/gallery-marigold.jpg";
-import galleryStage from "@/assets/gallery-stage.jpg";
-import galleryFlowers from "@/assets/gallery-flowers.jpg";
-import gallerySilhouette from "@/assets/gallery-silhouette.jpg";
+
 
 const TITLE = "Ketna Weds Keshav — Wedding Invitation";
 const DESCRIPTION =
@@ -67,18 +59,8 @@ export const Route = createFileRoute("/")({
   component: Invitation,
 });
 
-const galleryItems = [
-  { src: gallerySilhouette, alt: "Silhouette of the bride and groom at sunset", span: "sm:row-span-1" },
-  { src: galleryMandap, alt: "Floral wedding mandap decorated with roses and marigolds", span: "sm:row-span-2" },
-  { src: galleryRings, alt: "Golden wedding rings resting on ivory silk", span: "sm:row-span-1" },
-  { src: galleryRitual, alt: "Traditional Hindu wedding ritual around the sacred fire", span: "sm:row-span-2" },
-  { src: galleryMehendi, alt: "Intricate mehendi designs on the bride's hands", span: "sm:row-span-2" },
-  { src: galleryFlowers, alt: "Soft white and blush wedding flowers", span: "sm:row-span-1" },
-  { src: galleryBells, alt: "Brass temple bells with marigold garlands", span: "sm:row-span-2" },
-  { src: galleryMarigold, alt: "Hanging marigold garland decorations", span: "sm:row-span-1" },
-  { src: galleryStage, alt: "Royal wedding stage in maroon and gold", span: "sm:row-span-1" },
-  { src: galleryDiyas, alt: "Rows of lit brass diyas with flower petals", span: "sm:row-span-1" },
-];
+
+
 
 const rsvpContacts = [
   { name: "Ashwani Gupta", relation: "Father", phone: "9646606712" },
@@ -194,19 +176,13 @@ function Invitation() {
         <section className="relative bg-beige/60 px-6 py-24">
           <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-2">
             <Reveal className="relative mx-auto w-full max-w-md">
-              <div className="relative p-3">
+              <div className="relative p-6">
                 <span className="absolute inset-0 border border-gold/50" aria-hidden="true" />
                 <span className="absolute inset-3 border border-gold/25" aria-hidden="true" />
-                <img
-                  src={couple}
-                  alt="Indian bride and groom together at golden hour"
-                  width={1200}
-                  height={1504}
-                  loading="lazy"
-                  className="relative aspect-[4/5] w-full object-cover shadow-elegant"
-                />
+                <CoupleIllustration className="relative" />
               </div>
             </Reveal>
+
 
             <Reveal delay={120} className="text-center lg:text-left">
               <p className="font-sans text-[0.65rem] tracking-[0.45em] text-gold-deep uppercase">
@@ -299,37 +275,22 @@ function Invitation() {
           </div>
         </section>
 
-        {/* ---------------- Gallery ---------------- */}
+        {/* ---------------- Countdown ---------------- */}
         <section className="bg-beige/50 px-6 py-24">
           <Reveal className="text-center">
-            <h2 className="font-serif text-4xl text-maroon italic sm:text-5xl">Wedding Gallery</h2>
+            <h2 className="font-serif text-4xl text-maroon italic sm:text-5xl">
+              Counting Down
+            </h2>
+            <p className="mt-4 font-sans text-[0.65rem] tracking-[0.4em] text-gold-deep uppercase">
+              Until 3 September 2026 &middot; 8:00 PM
+            </p>
             <Divider className="mt-6" />
           </Reveal>
-
-          <div className="mx-auto mt-14 max-w-6xl columns-2 gap-4 sm:columns-3 [&>*]:mb-4">
-            {galleryItems.map((item, i) => (
-              <Reveal key={item.alt} delay={(i % 3) * 90} className="break-inside-avoid">
-                <figure className="group relative overflow-hidden">
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.07]"
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 bg-maroon/25 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-3 border border-gold/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                  />
-                </figure>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={120} className="mt-14">
+            <Countdown />
+          </Reveal>
         </section>
+
 
         {/* ---------------- Quote ---------------- */}
         <section className="relative overflow-hidden bg-maroon px-6 py-28 text-center">

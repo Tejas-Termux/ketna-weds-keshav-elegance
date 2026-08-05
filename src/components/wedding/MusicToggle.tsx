@@ -19,7 +19,7 @@ export function MusicToggle({ src }: { src: string }) {
       setPlaying(false);
       return;
     }
-    audio.volume = 0.35;
+    audio.volume = 1;
     audio.muted = false;
     try {
       await audio.play();
@@ -31,7 +31,8 @@ export function MusicToggle({ src }: { src: string }) {
 
   return (
     <>
-      <audio ref={audioRef} src={src} loop muted preload="none" />
+      <audio ref={audioRef} src={src} loop preload="auto" />
+
       <button
         type="button"
         onClick={toggle}
