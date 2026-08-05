@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Flower2, UtensilsCrossed, Gem, Phone, MapPin, Heart } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { EntryScreen } from "@/components/wedding/EntryScreen";
 import { MusicToggle } from "@/components/wedding/MusicToggle";
@@ -209,7 +210,7 @@ function Invitation() {
 
             <Reveal delay={120} className="text-center lg:text-left">
               <p className="font-sans text-[0.65rem] tracking-[0.45em] text-gold-deep uppercase">
-                Bride <span className="text-maroon">&hearts;</span> Groom
+                Bride <Heart aria-hidden="true" className="mx-1 inline h-3 w-3 fill-maroon text-maroon" /> Groom
               </p>
               <h2 className="mt-6 font-serif text-5xl text-maroon italic sm:text-6xl">Ketna</h2>
               <p className="my-3 font-sans text-xs tracking-[0.45em] text-gold-deep uppercase">and</p>
@@ -235,15 +236,15 @@ function Invitation() {
               {
                 day: "Sunday • 30 August 2026",
                 events: [
-                  { icon: "🌸", name: "Mata Ki Chowki", time: "7:00 PM" },
-                  { icon: "🍽", name: "Dinner", time: "9:00 PM" },
+                  { Icon: Flower2, name: "Mata Ki Chowki", time: "7:00 PM" },
+                  { Icon: UtensilsCrossed, name: "Dinner", time: "9:00 PM" },
                 ],
                 venueLabel: "Location",
                 venue: ["Ram Mandir", "Mandi Road", "Sultanpur Lodhi"],
               },
               {
                 day: "Thursday • 3 September 2026",
-                events: [{ icon: "💍", name: "Wedding Ceremony", time: "8:00 PM" }],
+                events: [{ Icon: Gem, name: "Wedding Ceremony", time: "8:00 PM" }],
                 venueLabel: "Venue",
                 venue: [
                   "Hotel Golden",
@@ -265,7 +266,7 @@ function Invitation() {
                     {group.events.map((e) => (
                       <li key={e.name} className="relative">
                         <span className="absolute -left-[2.6rem] flex h-9 w-9 items-center justify-center rounded-full border border-gold/50 bg-ivory text-base shadow-gold-glow">
-                          <span aria-hidden="true">{e.icon}</span>
+                          <e.Icon aria-hidden="true" className="h-4 w-4 text-gold-deep" strokeWidth={1.4} />
                         </span>
                         <p className="font-serif text-2xl text-maroon">{e.name}</p>
                         <p className="mt-1 font-sans text-xs tracking-[0.28em] text-muted-foreground uppercase">
@@ -377,7 +378,7 @@ function Invitation() {
                     rel="noreferrer"
                     className="group mt-5 inline-flex items-center gap-2 border border-gold/60 px-6 py-3 font-sans text-[0.7rem] tracking-[0.28em] text-maroon uppercase transition-colors duration-300 hover:bg-maroon hover:text-ivory"
                   >
-                    <span aria-hidden="true">📍</span> Open in Google Maps
+                    <MapPin aria-hidden="true" className="h-4 w-4" strokeWidth={1.4} /> Open in Google Maps
                   </a>
                 </article>
               </Reveal>
@@ -407,7 +408,7 @@ function Invitation() {
                       </span>
                     </span>
                     <span className="font-sans text-sm text-muted-foreground transition-colors group-hover:text-maroon">
-                      <span aria-hidden="true">📞</span> {c.phone}
+                      <span className="inline-flex items-center gap-2"><Phone aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={1.4} />{c.phone}</span>
                     </span>
                   </a>
                 </Reveal>
@@ -439,7 +440,7 @@ function Invitation() {
               “We eagerly await your gracious presence to bless the newlyweds.”
             </p>
             <p className="mt-12 font-sans text-[0.6rem] tracking-[0.35em] text-gold-deep uppercase">
-              Made with <span aria-hidden="true">❤️</span> for
+              Made with <Heart aria-hidden="true" className="mx-1 inline h-3 w-3 fill-maroon text-maroon" /> for
             </p>
             <p className="mt-3 font-serif text-2xl text-maroon">Ketna &amp; Keshav</p>
           </Reveal>
