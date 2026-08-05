@@ -221,6 +221,32 @@
   }
 }
 
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sway-left {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(4px) rotate(1.2deg);
+  }
+}
+
+@keyframes sway-right {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(-4px) rotate(-1.2deg);
+  }
+}
+
 @utility animate-rise {
   animation: rise-in 1.1s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
