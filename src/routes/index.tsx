@@ -17,7 +17,7 @@ const DESCRIPTION =
 const OG_TITLE = "You're Invited! 💍 Ketna ❤️ Keshav Wedding";
 const OG_DESCRIPTION =
   "Celebrate the beautiful union of Ketna and Keshav. We would be honored to have you join us on our special day.";
-const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+const OG_IMAGE = `${SITE_URL}/og-image-vertical.jpg`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
