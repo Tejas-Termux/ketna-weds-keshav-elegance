@@ -10,22 +10,45 @@ import { Reveal } from "@/components/wedding/Reveal";
 import ganesha from "@/assets/ganesha.png";
 
 
-const TITLE = "Ketna Weds Keshav — Wedding Invitation";
+const SITE_URL = "https://ketna-weds-keshav-elegance.lovable.app";
+const TITLE = "Ketna ❤️ Keshav | Wedding Invitation";
 const DESCRIPTION =
-  "With the blessings of our elders, Ketna & Keshav invite you to their wedding celebrations on 30 August and 3 September 2026 at Sultanpur Lodhi and Mansa, Punjab.";
+  "With immense joy and blessings, we invite you to celebrate the wedding of Ketna and Keshav. Your presence will make our special day even more memorable. Join us for love, laughter, and lifelong memories.";
+const OG_TITLE = "You're Invited! 💍 Ketna ❤️ Keshav Wedding";
+const OG_DESCRIPTION =
+  "Celebrate the beautiful union of Ketna and Keshav. We would be honored to have you join us on our special day.";
+const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
+      { name: "robots", content: "index, follow" },
+      {
+        name: "keywords",
+        content:
+          "Ketna Keshav wedding, Indian wedding invitation, Mansa Punjab wedding, Sultanpur Lodhi, 3 September 2026",
+      },
+      { property: "og:site_name", content: "Ketna ❤️ Keshav" },
+      { property: "og:title", content: OG_TITLE },
+      { property: "og:description", content: OG_DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: SITE_URL + "/" },
+      { property: "og:locale", content: "en_IN" },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:secure_url", content: OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:type", content: "image/jpeg" },
+      { property: "og:image:alt", content: "Ketna & Keshav wedding invitation" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: OG_TITLE },
+      { name: "twitter:description", content: OG_DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
+      { name: "twitter:image:alt", content: "Ketna & Keshav wedding invitation" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: SITE_URL + "/" }],
     scripts: [
       {
         type: "application/ld+json",
