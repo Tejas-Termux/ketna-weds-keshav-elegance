@@ -63,11 +63,12 @@ export const Route = createFileRoute("/")({
 
 
 const rsvpContacts = [
-  { name: "Ashwani Gupta", relation: "Father", phone: "9646606712" },
+  { name: "Ashwani Gupta & Renu Gupta", relation: "Father & Mother", phone: "9646606712" },
   { name: "Prabhat Gupta", relation: "Brother", phone: "8360859467" },
-  { name: "Ajay Gupta", relation: "Uncle", phone: "9463847358" },
-  { name: "Naveen Gupta", relation: "Uncle", phone: "9876352962" },
-  { name: "Bhushan Gupta", relation: "Uncle", phone: "9872347281" },
+  { name: "Ajay Gupta & Rajni Gupta", relation: "Chacha Ji & Chachi Ji", phone: "9463847358" },
+  { name: "Naveen Gupta & Ashu Gupta", relation: "Chacha Ji & Chachi Ji", phone: "9876352962" },
+  { name: "Bhushan Gupta & Ruchi Gupta", relation: "Chacha Ji & Chachi Ji", phone: "9872347281" },
+  { name: "Panjak Gupta & Monika Gupta", relation: "Fufar Ji & Bhua Ji", phone: "7986326547" },
 ];
 
 const venues = [

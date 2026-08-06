@@ -34,7 +34,10 @@ export function Countdown() {
           key={label}
           className="relative border border-gold/40 bg-card/70 px-2 py-6 text-center shadow-elegant backdrop-blur-sm"
         >
-          <span className="block font-serif text-3xl text-maroon tabular-nums sm:text-5xl">
+          <span
+            suppressHydrationWarning
+            className="block font-serif text-3xl text-maroon tabular-nums sm:text-5xl"
+          >
             {String(value).padStart(2, "0")}
           </span>
           <span className="mt-2 block font-sans text-[0.55rem] tracking-[0.3em] text-gold-deep uppercase sm:text-[0.62rem]">
