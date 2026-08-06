@@ -39,7 +39,7 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: OG_IMAGE },
       { property: "og:image:secure_url", content: OG_IMAGE },
       { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "630" },
+      { property: "og:image:height", content: "1600" },
       { property: "og:image:type", content: "image/jpeg" },
       { property: "og:image:alt", content: "Ketna & Keshav wedding invitation" },
       { name: "twitter:card", content: "summary_large_image" },
