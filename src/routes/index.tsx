@@ -131,6 +131,7 @@ function Invitation() {
     <>
       {!opened && <EntryScreen onOpened={handleOpened} />}
       <Petals />
+      <Sparkles />
       <MusicToggle src="/wedding-music.mp3" />
 
       <main
