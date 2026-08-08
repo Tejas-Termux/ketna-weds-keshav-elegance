@@ -69,3 +69,62 @@ export function Petals({ count = 14 }: { count?: number }) {
     </div>
   );
 }
+
+export function Sparkles({ count = 26 }: { count?: number }) {
+  return (
+    <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-20 overflow-hidden">
+      {Array.from({ length: count }).map((_, i) => {
+        const left = (i * 37) % 100;
+        const top = (i * 61) % 100;
+        const size = 2 + ((i * 3) % 4);
+        return (
+          <span
+            key={i}
+            className="absolute block rotate-45 bg-gold/70"
+            style={{
+              left: `${left}%`,
+              top: `${top}%`,
+              width: size,
+              height: size,
+              animation: `twinkle ${4 + (i % 5)}s ease-in-out ${(i % 7) * 0.7}s infinite`,
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
+export function MandalaBackdrop({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 400 400"
+      aria-hidden="true"
+      className={cn("pointer-events-none absolute -z-10 stroke-gold/25 fill-none", className)}
+      style={{ animation: "spin-slow 120s linear infinite" }}
+    >
+      {Array.from({ length: 16 }).map((_, i) => (
+        <g key={i} transform={`rotate(${i * 22.5} 200 200)`}>
+          <path d="M200 22c14 22 20 36 20 48s-6 22-20 36c-14-14-20-24-20-36s6-26 20-48Z" strokeWidth="0.8" />
+          <circle cx="200" cy="70" r="2.5" strokeWidth="0.8" />
+        </g>
+      ))}
+      <circle cx="200" cy="200" r="118" strokeWidth="0.8" />
+      <circle cx="200" cy="200" r="96" strokeWidth="0.6" strokeDasharray="2 8" />
+    </svg>
+  );
+}
+
+export function Diya({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 60 60" aria-hidden="true" className={cn("h-10 w-10", className)}>
+      <ellipse cx="30" cy="44" rx="18" ry="7" className="fill-maroon/80" />
+      <path d="M12 42c4 6 32 6 36 0" className="fill-none stroke-gold" strokeWidth="1.2" />
+      <path
+        d="M30 18c5 6 7 9 7 13a7 7 0 0 1-14 0c0-4 2-7 7-13Z"
+        className="fill-gold"
+        style={{ transformOrigin: "30px 38px", animation: "diya-flicker 2.4s ease-in-out infinite" }}
+      />
+    </svg>
+  );
+}
