@@ -314,9 +314,10 @@ function Invitation() {
         </section>
 
         {/* ---------------- Countdown ---------------- */}
-        <section className="bg-beige/50 px-6 py-24">
+        <section className="relative overflow-hidden bg-beige/50 px-6 py-24">
+          <MandalaBackdrop className="left-[-8rem] top-1/2 h-[28rem] w-[28rem] -translate-y-1/2 opacity-40" />
           <Reveal className="text-center">
-            <h2 className="font-serif text-4xl text-maroon italic sm:text-5xl">
+            <h2 className="font-serif text-4xl italic text-shimmer sm:text-5xl">
               Counting Down
             </h2>
             <p className="mt-4 font-sans text-[0.65rem] tracking-[0.4em] text-gold-deep uppercase">
