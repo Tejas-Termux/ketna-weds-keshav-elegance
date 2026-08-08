@@ -5,7 +5,14 @@ import { Countdown } from "@/components/wedding/Countdown";
 import { CoupleIllustration } from "@/components/wedding/CoupleIllustration";
 import { EntryScreen } from "@/components/wedding/EntryScreen";
 import { MusicToggle } from "@/components/wedding/MusicToggle";
-import { Divider, CornerFlourish, Petals } from "@/components/wedding/Ornaments";
+import {
+  Divider,
+  CornerFlourish,
+  Petals,
+  Sparkles,
+  MandalaBackdrop,
+  Diya,
+} from "@/components/wedding/Ornaments";
 import { Reveal } from "@/components/wedding/Reveal";
 import ganesha from "@/assets/ganesha.png";
 
@@ -124,6 +131,7 @@ function Invitation() {
     <>
       {!opened && <EntryScreen onOpened={handleOpened} />}
       <Petals />
+      <Sparkles />
       <MusicToggle src="/wedding-music.mp3" />
 
       <main
@@ -133,6 +141,7 @@ function Invitation() {
       >
         {/* ---------------- Hero ---------------- */}
         <section className="relative px-6 pt-20 pb-16 text-center sm:pt-28">
+          <MandalaBackdrop className="left-1/2 top-4 h-[26rem] w-[26rem] -translate-x-1/2 opacity-60" />
           <CornerFlourish className="left-4 top-4 sm:left-10 sm:top-10" />
           <CornerFlourish className="right-4 top-4 -scale-x-100 sm:right-10 sm:top-10" />
           <div
@@ -225,9 +234,14 @@ function Invitation() {
         </section>
 
         {/* ---------------- Programme ---------------- */}
-        <section className="px-6 py-24">
+        <section className="relative px-6 py-24">
+          <MandalaBackdrop className="right-[-6rem] top-10 h-[24rem] w-[24rem] opacity-40" />
           <Reveal className="text-center">
-            <h2 className="font-serif text-4xl text-maroon italic sm:text-5xl">Programme</h2>
+            <div className="flex items-center justify-center gap-6">
+              <Diya />
+              <h2 className="font-serif text-4xl text-maroon italic sm:text-5xl">Programme</h2>
+              <Diya className="-scale-x-100" />
+            </div>
             <Divider className="mt-6" />
           </Reveal>
 
@@ -300,9 +314,10 @@ function Invitation() {
         </section>
 
         {/* ---------------- Countdown ---------------- */}
-        <section className="bg-beige/50 px-6 py-24">
+        <section className="relative overflow-hidden bg-beige/50 px-6 py-24">
+          <MandalaBackdrop className="left-[-8rem] top-1/2 h-[28rem] w-[28rem] -translate-y-1/2 opacity-40" />
           <Reveal className="text-center">
-            <h2 className="font-serif text-4xl text-maroon italic sm:text-5xl">
+            <h2 className="font-serif text-4xl italic text-shimmer sm:text-5xl">
               Counting Down
             </h2>
             <p className="mt-4 font-sans text-[0.65rem] tracking-[0.4em] text-gold-deep uppercase">

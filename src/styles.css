@@ -264,3 +264,68 @@
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ---------- extra decorative motion ---------- */
+
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(-0.6deg);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes gold-sheen {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes diya-flicker {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scaleY(1);
+  }
+  40% {
+    opacity: 1;
+    transform: scaleY(1.12);
+  }
+  70% {
+    opacity: 0.7;
+    transform: scaleY(0.94);
+  }
+}
+
+@utility text-shimmer {
+  background-image: linear-gradient(
+    100deg,
+    var(--gold-deep) 0%,
+    var(--gold-soft) 25%,
+    var(--gold) 45%,
+    var(--gold-deep) 70%,
+    var(--gold-soft) 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gold-sheen 7s linear infinite;
+}
