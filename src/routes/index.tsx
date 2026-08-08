@@ -172,7 +172,7 @@ function Invitation() {
                 With the Blessings of Grandparents
               </p>
               <p className="mt-4 font-serif text-xl text-maroon sm:text-2xl">
-                Smt. Shimla &amp; Late Sh. Surinder Pal Gupta
+                Smt. Shimla Rani &amp; Late Sh. Surinder Pal Gupta
               </p>
             </Reveal>
 
