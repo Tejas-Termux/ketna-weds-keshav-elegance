@@ -5,7 +5,14 @@ import { Countdown } from "@/components/wedding/Countdown";
 import { CoupleIllustration } from "@/components/wedding/CoupleIllustration";
 import { EntryScreen } from "@/components/wedding/EntryScreen";
 import { MusicToggle } from "@/components/wedding/MusicToggle";
-import { Divider, CornerFlourish, Petals } from "@/components/wedding/Ornaments";
+import {
+  Divider,
+  CornerFlourish,
+  Petals,
+  Sparkles,
+  MandalaBackdrop,
+  Diya,
+} from "@/components/wedding/Ornaments";
 import { Reveal } from "@/components/wedding/Reveal";
 import ganesha from "@/assets/ganesha.png";
 
