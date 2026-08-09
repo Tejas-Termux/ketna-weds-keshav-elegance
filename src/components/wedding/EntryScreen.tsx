@@ -2,7 +2,13 @@ import { useEffect, useState } from "react";
 import { CornerFlourish } from "./Ornaments";
 import ganesha from "@/assets/ganesha.png";
 
-export function EntryScreen({ onOpened }: { onOpened: () => void }) {
+export function EntryScreen({
+  onOpened,
+  onEnterClick,
+}: {
+  onOpened: () => void;
+  onEnterClick?: () => void;
+}) {
   const [opening, setOpening] = useState(false);
   const [gone, setGone] = useState(false);
 
@@ -97,7 +103,10 @@ export function EntryScreen({ onOpened }: { onOpened: () => void }) {
 
         <button
           type="button"
-          onClick={() => setOpening(true)}
+          onClick={() => {
+            onEnterClick?.();
+            setOpening(true);
+          }}
           className="animate-rise group relative mt-12 overflow-hidden rounded-full px-10 py-4 font-sans text-xs tracking-[0.32em] text-maroon-deep uppercase shadow-gold-glow transition-transform duration-300 hover:scale-[1.04] focus-visible:ring-2 focus-visible:ring-maroon focus-visible:ring-offset-2 focus-visible:outline-none"
           style={{ animationDelay: "650ms" }}
         >

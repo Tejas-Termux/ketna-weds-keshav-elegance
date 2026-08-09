@@ -111,15 +111,18 @@ const venues = [
   },
   {
     title: "Wedding Ceremony",
-    place: "Hotel Golden",
+    place: "Hotel Golden Palm",
     address: "Opposite Renaissance School, Barnala Road, Mansa, Punjab",
-    query: "Hotel Golden, Barnala Road, Mansa, Punjab",
+    query: "Hotel Golden Palm, Barnala Road, Mansa, Punjab",
+    mapUrl: "https://maps.app.goo.gl/6vKWtHLJ7NeoGpCo6",
   },
 ];
 
 function Invitation() {
   const [opened, setOpened] = useState(false);
+  const [playSignal, setPlaySignal] = useState(0);
   const handleOpened = useCallback(() => setOpened(true), []);
+  const handleEnterClick = useCallback(() => setPlaySignal((n) => n + 1), []);
 
   useEffect(() => {
     document.body.style.overflow = opened ? "" : "hidden";
@@ -130,10 +133,10 @@ function Invitation() {
 
   return (
     <>
-      {!opened && <EntryScreen onOpened={handleOpened} />}
+      {!opened && <EntryScreen onOpened={handleOpened} onEnterClick={handleEnterClick} />}
       <Petals />
       <Sparkles />
-      <MusicToggle src={weddingMusic.url} />
+      <MusicToggle src={weddingMusic.url} playSignal={playSignal} />
 
       <main
         className={`paper relative overflow-hidden transition-all duration-1000 ${
@@ -270,7 +273,7 @@ function Invitation() {
                 events: [{ Icon: Gem, name: "Wedding Ceremony", time: "8:00 PM" }],
                 venueLabel: "Venue",
                 venue: [
-                  "Hotel Golden",
+                  "Hotel Golden Palm",
                   "Opposite Renaissance School",
                   "Barnala Road",
                   "Mansa, Punjab",
@@ -382,7 +385,7 @@ function Invitation() {
                     className="mt-5 h-64 w-full border border-gold/20"
                   />
                   <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.query)}`}
+                    href={v.mapUrl ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.query)}`}
                     target="_blank"
                     rel="noreferrer"
                     className="group mt-5 inline-flex items-center gap-2 border border-gold/60 px-6 py-3 font-sans text-[0.7rem] tracking-[0.28em] text-maroon uppercase transition-colors duration-300 hover:bg-maroon hover:text-ivory"
