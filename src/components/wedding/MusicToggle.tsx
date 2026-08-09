@@ -31,7 +31,7 @@ export function MusicToggle({ src }: { src: string }) {
 
   return (
     <>
-      <audio ref={audioRef} src={src} loop preload="auto" />
+      <audio ref={audioRef} src={src} loop playsInline preload="metadata" />
 
       <button
         type="button"

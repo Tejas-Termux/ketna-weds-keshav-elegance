@@ -15,6 +15,7 @@ import {
 } from "@/components/wedding/Ornaments";
 import { Reveal } from "@/components/wedding/Reveal";
 import ganesha from "@/assets/ganesha.png";
+import weddingMusic from "@/assets/wedding-music.mp3.asset.json";
 
 
 const SITE_URL = "https://ketna-weds-keshav-elegance.lovable.app";
@@ -132,7 +133,7 @@ function Invitation() {
       {!opened && <EntryScreen onOpened={handleOpened} />}
       <Petals />
       <Sparkles />
-      <MusicToggle src="/wedding-music.mp3" />
+      <MusicToggle src={weddingMusic.url} />
 
       <main
         className={`paper relative overflow-hidden transition-all duration-1000 ${
@@ -161,6 +162,14 @@ function Invitation() {
               || Om Shri Ganeshaya Namah ||
             </p>
             <Divider className="mt-8" />
+            <div className="mt-10 flex flex-col items-center gap-2" style={{ animation: "gentle-float 3s ease-in-out infinite" }}>
+              <span className="font-sans text-[0.6rem] tracking-[0.4em] text-gold-deep uppercase">
+                Scroll Down
+              </span>
+              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-none stroke-gold-deep" strokeWidth="1.2">
+                <path d="M12 4v14M6 13l6 6 6-6" />
+              </svg>
+            </div>
           </Reveal>
         </section>
 
