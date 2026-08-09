@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export function MusicToggle({ src }: { src: string }) {
+export function MusicToggle({ src, playSignal = 0 }: { src: string; playSignal?: number }) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
 
@@ -11,6 +11,19 @@ export function MusicToggle({ src }: { src: string }) {
     };
   }, []);
 
+  // Start playback when the entry button is clicked (uses that user gesture).
+  useEffect(() => {
+    if (!playSignal) return;
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.muted = false;
+    audio.volume = 0.6;
+    audio
+      .play()
+      .then(() => setPlaying(true))
+      .catch(() => setPlaying(false));
+  }, [playSignal]);
+
   const toggle = async () => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -19,7 +32,7 @@ export function MusicToggle({ src }: { src: string }) {
       setPlaying(false);
       return;
     }
-    audio.volume = 1;
+    audio.volume = 0.6;
     audio.muted = false;
     try {
       await audio.play();
