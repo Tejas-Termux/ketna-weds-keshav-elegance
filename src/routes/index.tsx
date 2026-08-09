@@ -15,6 +15,7 @@ import {
 } from "@/components/wedding/Ornaments";
 import { Reveal } from "@/components/wedding/Reveal";
 import ganesha from "@/assets/ganesha.png";
+import weddingMusic from "@/assets/wedding-music.mp3.asset.json";
 
 
 const SITE_URL = "https://ketna-weds-keshav-elegance.lovable.app";
@@ -132,7 +133,7 @@ function Invitation() {
       {!opened && <EntryScreen onOpened={handleOpened} />}
       <Petals />
       <Sparkles />
-      <MusicToggle src="/wedding-music.mp3" />
+      <MusicToggle src={weddingMusic.url} />
 
       <main
         className={`paper relative overflow-hidden transition-all duration-1000 ${
