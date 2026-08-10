@@ -15,7 +15,9 @@ import {
 } from "@/components/wedding/Ornaments";
 import { Reveal } from "@/components/wedding/Reveal";
 import ganesha from "@/assets/ganesha.png";
-import weddingMusic from "@/assets/wedding-music.mp3.asset.json";
+
+// Resolve the MP3 asset to a production-ready URL so it works when hosted.
+const weddingMusicUrl = new URL("../assets/music.mp3", import.meta.url).toString();
 
 
 const SITE_URL = "https://ketna-weds-keshav-elegance.lovable.app";
@@ -137,7 +139,7 @@ function Invitation() {
       {!opened && <EntryScreen onOpened={handleOpened} onEnterClick={handleEnterClick} />}
       <Petals />
       <Sparkles />
-      <MusicToggle src={weddingMusic.url} playSignal={playSignal} />
+      <MusicToggle src={weddingMusicUrl} playSignal={playSignal} />
 
       <main
         className={`paper relative overflow-hidden transition-all duration-1000 ${
