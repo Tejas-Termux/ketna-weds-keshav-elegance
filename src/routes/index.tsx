@@ -99,7 +99,7 @@ const rsvpContacts = [
   { name: "Ajay Gupta & Rajni Gupta", relation: "Chacha Ji & Chachi Ji", phone: "9463847358" },
   { name: "Naveen Gupta & Ashu Gupta", relation: "Chacha Ji & Chachi Ji", phone: "9876352962" },
   { name: "Bhushan Gupta & Ruchi Gupta", relation: "Chacha Ji & Chachi Ji", phone: "9872347281" },
-  { name: "Panjak Gupta & Monika Gupta", relation: "Fufar Ji & Bhua Ji", phone: "7986326547" },
+  { name: "Pankaj Gupta & Monika Gupta", relation: "Fufar Ji & Bhua Ji", phone: "7986326547" },
 ];
 
 const venues = [
