@@ -107,7 +107,8 @@ const venues = [
     title: "Mata Ki Chowki",
     place: "Ram Mandir",
     address: "Mandi Road, Sultanpur Lodhi, Punjab",
-    query: "Ram Mandir, Mandi Road, Sultanpur Lodhi, Punjab",
+    query: "31.212555,75.197176",
+    mapUrl: "https://maps.app.goo.gl/79xbnMuRwDUR7JMNA",
   },
   {
     title: "Wedding Ceremony",
