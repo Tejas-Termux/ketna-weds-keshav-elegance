@@ -108,6 +108,7 @@ const venues = [
     place: "Ram Mandir",
     address: "Mandi Road, Sultanpur Lodhi, Punjab",
     query: "Ram Mandir, Mandi Road, Sultanpur Lodhi, Punjab",
+    mapUrl: "https://maps.app.goo.gl/79xbnMuRwDUR7JMNA",
   },
   {
     title: "Wedding Ceremony",
